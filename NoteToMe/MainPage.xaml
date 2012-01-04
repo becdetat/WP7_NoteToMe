@@ -33,7 +33,7 @@
 			</Grid.RowDefinitions>
 			<StackPanel Orientation="Horizontal" Margin="0">
 				<TextBlock Margin="0,8" TextWrapping="Wrap" Text="To" Width="42" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="32"/>
-				<TextBox x:Name="Address" Margin="0,0,0,-7" Text="ben@belfryimages.com.au" Width="293"/>
+				<TextBox x:Name="Address" Margin="0,0,0,-7" Text="" Width="293"/>
 				<Button
 					x:Name="Send"
 					Content="Send"
