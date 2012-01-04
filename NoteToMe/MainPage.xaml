@@ -22,11 +22,26 @@
 
 		<!--TitlePanel contains the name of the application and page title-->
 		<StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-			<TextBlock x:Name="ApplicationTitle" Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
-			<TextBlock x:Name="PageTitle" Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+			<TextBlock x:Name="ApplicationTitle" Text="NOTE TO ME" Style="{StaticResource PhoneTextNormalStyle}"/>
 		</StackPanel>
 
 		<!--ContentPanel - place additional content here-->
-		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0"/>
+		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="9*"/>
+			</Grid.RowDefinitions>
+			<StackPanel Orientation="Horizontal" Margin="0">
+				<TextBlock Margin="0,8" TextWrapping="Wrap" Text="To" Width="42" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="32"/>
+				<TextBox x:Name="Address" Margin="0,0,0,-7" TextWrapping="Wrap" Text="ben@belfryimages.com.au" Width="293"/>
+				<Button
+					x:Name="Send"
+					Content="Send"
+					Margin="0,4,0,0"
+					Width="124" Click="Send_Click"					
+					/>
+			</StackPanel>
+			<TextBlock Height="244" Margin="0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+		</Grid>
 	</Grid>
 </phone:PhoneApplicationPage>
