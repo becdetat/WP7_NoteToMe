@@ -1,0 +1,20 @@
+# Build and system artifacts:
+obj/
+bin/
+build/debug/
+build/release/
+*.user
+*.cache
+*.suo
+TestResult.xml
+grep.txt
+Thumbs.db
+*_install_*.exe
+StyleCop.Cache
+
+# Temp files (eg VIM)
+*.*~
+~$*.xlsx
+~*.tmp
+~$*.docx
+*.orig
