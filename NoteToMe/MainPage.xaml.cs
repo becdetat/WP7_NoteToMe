@@ -10,14 +10,30 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using System.IO.IsolatedStorage;
 
 namespace NoteToMe
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        const string EMAIL_ADDRESS_KEY = "EmailAddress";
+
+        IsolatedStorageSettings _isolatedStorageSettings;
+
+
         public MainPage()
         {
             InitializeComponent();
+
+            _isolatedStorageSettings = IsolatedStorageSettings.ApplicationSettings;
+            if (_isolatedStorageSettings.Contains(EMAIL_ADDRESS_KEY)) Address.Text = _isolatedStorageSettings[EMAIL_ADDRESS_KEY].ToString();
+        }
+
+        protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            _isolatedStorageSettings[EMAIL_ADDRESS_KEY] = Address.Text;
+
+            base.OnNavigatedFrom(e);
         }
 
         private void Send_Click(object sender, System.Windows.RoutedEventArgs e)
