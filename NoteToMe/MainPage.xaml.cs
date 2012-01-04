@@ -11,6 +11,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using System.IO.IsolatedStorage;
+using Microsoft.Phone.Tasks;
 
 namespace NoteToMe
 {
@@ -38,7 +39,19 @@ namespace NoteToMe
 
         private void Send_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-        	// TODO: Add event handler implementation here.
+            var subject = "Send to me";
+            var to = this.Address.Text;
+            var message = this.Message.Text;
+            
+            var emailComposeTask = new EmailComposeTask
+            {
+                Subject = subject,
+                To = to,
+                Body = message
+            };
+
+            this.Message.Text = "";
+            emailComposeTask.Show();
         }
     }
 }

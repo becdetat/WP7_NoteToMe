@@ -33,7 +33,7 @@
 			</Grid.RowDefinitions>
 			<StackPanel Orientation="Horizontal" Margin="0">
 				<TextBlock Margin="0,8" TextWrapping="Wrap" Text="To" Width="42" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="32"/>
-				<TextBox x:Name="Address" Margin="0,0,0,-7" TextWrapping="Wrap" Text="ben@belfryimages.com.au" Width="293"/>
+				<TextBox x:Name="Address" Margin="0,0,0,-7" Text="ben@belfryimages.com.au" Width="293"/>
 				<Button
 					x:Name="Send"
 					Content="Send"
@@ -41,7 +41,7 @@
 					Width="124" Click="Send_Click"					
 					/>
 			</StackPanel>
-			<TextBlock Height="244" Margin="0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+			<TextBox x:Name="Message" Height="244" Margin="0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
 		</Grid>
 	</Grid>
 </phone:PhoneApplicationPage>
